@@ -25,3 +25,5 @@ app.use((err: any, req: Request, res: Response, next: NextFunction) => errorResp
 app.listen(port, () => {
   console.log('Application listing on port 8000');
 });
+
+export default app;

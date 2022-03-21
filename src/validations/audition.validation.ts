@@ -5,7 +5,6 @@ import baseValidator from '.';
 
 export const addNewPhase = (req: Request, res: Response, next: NextFunction): void => {
   const schema = Joi.object({
-    phaseId: Joi.number().required(),
     name: Joi.string().required(),
   });
   baseValidator(schema, req, res, next, 'body');
