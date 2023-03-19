@@ -79,3 +79,13 @@ The API is currently in version 1 (v1) and it is hosted on heroku at [Base URL](
 ## Copyright
 
 Copyright (c) 2021 Majaagun Rilwan
+
+
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
+
