@@ -79,22 +79,3 @@ The API is currently in version 1 (v1) and it is hosted on heroku at [Base URL](
 ## Copyright
 
 Copyright (c) 2021 Majaagun Rilwan
-
-
-```mermaid
-sequenceDiagram
-Sentinel-FrontEnd->>Google-storage:Http (fetch scanned result)
-Google-storage-->>Sentinel-FrontEnd:Http (response)
-
-Sentinel-FrontEnd ->> cloud-function: http(request)
-Note left of cloud-function:On rescan button clicked, a request is made directly to Cloud Function
-cloud-function -->> Sentinel-FrontEnd: http (response)
-cloud-function -->>Google-storage: upload (scan result)
-Note right of Google-storage: scanned result uploaded
-
- loop Daily cron Job
-Note right of github-action: Actions triggers cron job to scan all projects daily
-github-action ->> Google-storage: upload(scan result)
-end
-```
-
