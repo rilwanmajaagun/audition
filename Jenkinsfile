@@ -14,7 +14,7 @@ pipeline {
           args '-v /var/run/docker.sock:/var/run/docker.sock'
         }
       }
-      steps {   
+      steps {   sh 'sudo chown -R 501:20 "/.npm"'
                 sh 'npm cache clean --force '
                 sh 'rm -rf node_modules'
                 sh 'npm install'
