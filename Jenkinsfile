@@ -2,6 +2,7 @@ pipeline {
   agent {
         docker {
             image 'node:18.17.1-alpine3.18'
+             args '-u 0:0'
         }
     }
 
@@ -15,6 +16,7 @@ pipeline {
     stage('Build') {
       steps {   
                 sh 'ls'
+                sh 'npm install -g npm@latest'
                 sh 'npm install'
       }
     }
