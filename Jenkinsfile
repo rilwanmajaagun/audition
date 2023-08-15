@@ -10,7 +10,8 @@ pipeline {
     stage('Test') {
       agent {
         docker {
-          image 'node:18.17.1-alpine3.18'
+            image 'node:18.17.1-alpine3.18'
+            args '-u myuser'
           }
         }
       steps {
