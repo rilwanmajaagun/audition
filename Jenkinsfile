@@ -10,12 +10,12 @@ pipeline {
     stage('Test') {
       agent {
         docker {
-          image 'node:18.17.1-alpine3.18'
+          image 'node:18-alpine'
           args '-v /var/run/docker.sock:/var/run/docker.sock'
         }
       }
       steps {   
-                sh 'npm cache clean --force'
+                sh 'npm cache clean --force '
                 sh 'rm -rf node_modules'
                 sh 'npm install'
       }
