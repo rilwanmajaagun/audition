@@ -1,5 +1,10 @@
 pipeline {
-  agent any
+  agent {
+        docker {
+            image 'node:18.17.1-alpine3.18'
+        }
+    }
+
   stages {
     stage('checkout') {
       steps {
@@ -7,15 +12,9 @@ pipeline {
       }
     }
 
-    stage('Test') {
-      agent {
-        docker {
-          image 'node:18-alpine'
-        }
-      }
+    stage('Build') {
       steps {   
-                sh 'npm cache clean --force '
-                sh 'npm update'
+                sh 'ls'
                 sh 'npm install'
       }
     }
