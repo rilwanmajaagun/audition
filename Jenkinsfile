@@ -15,6 +15,7 @@ pipeline {
         }
       }
       steps {
+        npm cache clean --force
         sh 'npm install'
         sh 'npm run test'
       }
