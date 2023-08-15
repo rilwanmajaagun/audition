@@ -2,13 +2,13 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import express, { Request, Response, NextFunction } from 'express';
 import router from './routes';
-import { Helper, genericErrors, constants } from '@src/utils';
+import { Helper, genericErrors, constants } from './utils';
 
 const { successResponse, errorResponse } = Helper;
 const { notFoundApi } = genericErrors;
 const { WELCOME, v1 } = constants;
 
-const port = 8000;
+const port = process.env.PORT ?? 8001;
 const app = express();
 
 app.use(

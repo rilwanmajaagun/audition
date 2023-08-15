@@ -1,0 +1,11 @@
+services:
+  audition-app:
+    build: .
+    ports:
+      - '8000:8000'
+    environment:
+      - PORT=8000
+  
+volumes:
+  cache:
+    driver: local
